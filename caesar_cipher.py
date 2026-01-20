@@ -1,6 +1,7 @@
 letters= 'abcdefghijklmnopqrstuvwxyz'
 num_letters= len(letters)
 
+# Encryption and Decryption functions
 # def encrypt(plaintext, key):
 #     ciphertext=' '
 #     for letter in plaintext:
@@ -31,6 +32,7 @@ num_letters= len(letters)
 #                     new_index += 26
 #                 plaintext += letters[new_index]
 #     return plaintext
+# Combined function for encryption and decryption
 
 def encrypt_decrypt(text, mode, key):
     result = ""
