@@ -41,7 +41,6 @@ def encrypt_decrypt(text, mode, key):
 
     for letter in text:
         letter = letter.lower()
-        # if letter == ' ':
         if letter.isupper():
             result += letter
         else:
@@ -61,43 +60,28 @@ def encrypt_decrypt(text, mode, key):
 def main():
     print("*--*CAESAR CIPHER*--*")
     mode = input("Do you want to encrypt or decrypt? ").lower()
-    key = int(input("Enter the key (1 through 26): "))
-    text = input("Enter the message: ")
-    result = encrypt_decrypt(text, mode, key)
-    print(f"The result is: {result}") 
+    while True:
+         try:
+            key = int(input("Enter the key (1 through 26): "))
+            if not 1 <= key <= 26:
+                print(f"Key {key} must be in between 1 to 26. Try again.")
+                continue
+            break
+         except ValueError:
+             print("Invalid input. Please enter a number between 1 and 26.")
+    # continue
+    # while True:
+    #         key = int(input("Enter the key (1 through 26): "))
+    #         if not 1 <= key <= 26:
+    #             print("Key must be between 1 and 26. Try again.")
+    #             continue
+    #         except ValueError:
 
+
+    text = input("Enter the message: ")
+    result = encrypt_decrypt(text, mode=mode, key=key)
+    print(f"The result is: {result}") 
+    
+    
 if __name__ == "__main__":
     main()
-
-
-    
-
-
-# print()
-
-
-# print()
-# print('*--*CAESAR CIPHER*--*')
-# print('Do you want to encrypt or decrypt? ')
-# user_input= input('encrypt/decrypt: ').lower()
-
-# print()
-
-
-# if user_input == 'encrypt':
-#     print('ENCRYPTION MODE SELECTED')
-#     print()
-#     key= int(input('Enter the key(1 through 26): '))
-#     text= input('Enter the text to encrypt: ')
-#     ciphertext= encrypt_decrypt(text, 'encrypt', key)
-#     print(f'CIPHERTEXT: {ciphertext}')
-
-# elif user_input == 'decrypt':
-#     print('ENCRYPTION MODE SELECTED')
-#     print()
-#     key= int(input('Enter the key(1 through 26): '))
-#     text= input('Enter the text to encrypt: ')
-#     plaintext= encrypt_decrypt(text, 'decrypt', key)
-#     print(f'PLAINTEXT: {plaintext}')
-
-
