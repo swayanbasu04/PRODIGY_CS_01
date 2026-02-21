@@ -69,14 +69,6 @@ def main():
             break
          except ValueError:
              print("Invalid input. Please enter a number between 1 and 26.")
-    # continue
-    # while True:
-    #         key = int(input("Enter the key (1 through 26): "))
-    #         if not 1 <= key <= 26:
-    #             print("Key must be between 1 and 26. Try again.")
-    #             continue
-    #         except ValueError:
-
 
     text = input("Enter the message: ")
     result = encrypt_decrypt(text, mode=mode, key=key)
