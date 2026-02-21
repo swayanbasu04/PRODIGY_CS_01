@@ -72,7 +72,7 @@ def main():
 
     text = input("Enter the message: ")
     result = encrypt_decrypt(text, mode=mode, key=key)
-    print(f"The result is: {result}") 
+    print(f"Result is: {result}") 
     
     
 if __name__ == "__main__":
